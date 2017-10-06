@@ -15,6 +15,7 @@ struct Forecast {//TODO: if I have time, refactor using new Codable protocol
     let minTempC: Int
     let maxTempC: Int
     let date: Date
+    let icon: String
 }
 
 extension Forecast {
@@ -24,6 +25,7 @@ extension Forecast {
         self.maxTempF = dictionary["maxTempF"] as? Int ?? 0
         self.minTempC = dictionary["minTempC"] as? Int ?? 0
         self.maxTempC = dictionary["maxTempC"] as? Int ?? 0
+        self.icon = dictionary["icon"] as? String ?? ""
         let dateString = dictionary["dateTimeISO"] as? String ?? ""
         
         let dateFormatter = DateFormatter()
