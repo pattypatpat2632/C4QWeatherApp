@@ -5,6 +5,8 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,47 +19,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="forecastCell" id="xqu-Lb-0HI" customClass="ForecastCell" customModule="C4QWeatherApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="forecastCell" rowHeight="150" id="xqu-Lb-0HI" customClass="ForecastCell" customModule="C4QWeatherApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xqu-Lb-0HI" id="7jn-AO-bUU">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date of forecaste" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQ2-qR-3bE">
-                                            <rect key="frame" x="8" y="11" width="132" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of forecast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQ2-qR-3bE">
+                                            <rect key="frame" x="8" y="8" width="123" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LowLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL4-1w-3rC">
-                                            <rect key="frame" x="211" y="12" width="73" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HiLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwG-lI-DT0">
+                                            <rect key="frame" x="8" y="37" width="58" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O5j-1t-wDZ">
-                                            <rect key="frame" x="292" y="3" width="45" height="36"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LowLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL4-1w-3rC">
+                                            <rect key="frame" x="8" y="66" width="73" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O5j-1t-wDZ">
+                                            <rect key="frame" x="139" y="8" width="94" height="94"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="O5j-1t-wDZ" secondAttribute="height" multiplier="1:1" id="evT-8p-A1z"/>
+                                            </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3r-wl-nGP">
-                                            <rect key="frame" x="345" y="3" width="30" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3r-wl-nGP">
+                                            <rect key="frame" x="249" y="8" width="30" height="30"/>
                                             <state key="normal" title="F"/>
                                             <connections>
                                                 <action selector="convertButtonTapped:" destination="xqu-Lb-0HI" eventType="touchUpInside" id="v1f-Tc-tIS"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HiLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwG-lI-DT0">
-                                            <rect key="frame" x="145" y="14" width="58" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="PL4-1w-3rC" firstAttribute="leading" secondItem="7jn-AO-bUU" secondAttribute="leading" constant="8" id="3C4-9u-nWf"/>
+                                        <constraint firstItem="PL4-1w-3rC" firstAttribute="top" secondItem="NwG-lI-DT0" secondAttribute="bottom" constant="8" id="3YU-5a-7Aj"/>
+                                        <constraint firstItem="h3r-wl-nGP" firstAttribute="top" secondItem="7jn-AO-bUU" secondAttribute="top" constant="8" id="56H-9A-HPA"/>
+                                        <constraint firstItem="tQ2-qR-3bE" firstAttribute="top" secondItem="7jn-AO-bUU" secondAttribute="top" constant="8" id="CHN-gq-7D3"/>
+                                        <constraint firstItem="NwG-lI-DT0" firstAttribute="leading" secondItem="7jn-AO-bUU" secondAttribute="leading" constant="8" id="Krc-VA-aUH"/>
+                                        <constraint firstItem="NwG-lI-DT0" firstAttribute="top" secondItem="tQ2-qR-3bE" secondAttribute="bottom" constant="8" id="Qjm-5r-XIy"/>
+                                        <constraint firstItem="h3r-wl-nGP" firstAttribute="leading" secondItem="O5j-1t-wDZ" secondAttribute="trailing" constant="16" id="SD9-Iv-NiE"/>
+                                        <constraint firstItem="tQ2-qR-3bE" firstAttribute="leading" secondItem="7jn-AO-bUU" secondAttribute="leading" constant="8" id="kV3-li-PyI"/>
+                                        <constraint firstItem="O5j-1t-wDZ" firstAttribute="top" secondItem="7jn-AO-bUU" secondAttribute="top" constant="8" id="mLr-Di-wxh"/>
+                                        <constraint firstItem="O5j-1t-wDZ" firstAttribute="leading" secondItem="tQ2-qR-3bE" secondAttribute="trailing" constant="8" id="oro-dz-Y59"/>
+                                        <constraint firstItem="O5j-1t-wDZ" firstAttribute="width" secondItem="7jn-AO-bUU" secondAttribute="width" multiplier="0.25" id="wga-OH-Pa3"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="convertButton" destination="h3r-wl-nGP" id="gDl-sV-elh"/>

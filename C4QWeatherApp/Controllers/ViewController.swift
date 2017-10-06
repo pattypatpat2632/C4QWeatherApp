@@ -27,7 +27,7 @@ class ForecastController: UITableViewController {
                 print(failString)
             case .forecastsRetrieved(let forecasts):
                 forecasts.forEach{print($0.maxTempF)}
-                self.forecasts = forecasts
+                self.forecasts = forecasts.sorted{$0.date < $1.date}
             }
         }
     }
@@ -48,6 +48,10 @@ extension ForecastController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "forecastCell", for: indexPath) as! ForecastCell
         cell.set(forecast: forecasts[indexPath.row])
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
 

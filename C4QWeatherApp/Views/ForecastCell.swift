@@ -11,20 +11,14 @@ import UIKit
 class ForecastCell: UITableViewCell {
     
     var forecast: Forecast?
-    var tempFormat = TempFormat.farenheit
+    var farenheit = true
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var hiLabel: UILabel!
     @IBOutlet weak var loLabel: UILabel!
     @IBOutlet var iconView: UIImageView!
     @IBOutlet var convertButton: UIButton!
-    
-    enum TempFormat {
-        case celcius
-        case farenheit
-    }
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -37,36 +31,39 @@ class ForecastCell: UITableViewCell {
     }
     
     func set(forecast: Forecast) {
+        self.forecast = forecast
         self.hiLabel.text = String(forecast.maxTempF)
         self.loLabel.text = String(forecast.minTempF)
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
         let dateString = dateFormatter.string(from: forecast.date)
-        self.dateLabel.text = dateString
+        self.dateLabel.text = "\(dateString)°"
         
         self.iconView.image = UIImage(named: forecast.icon)
     }
     @IBAction func convertButtonTapped(_ sender: Any) {
-        switch tempFormat {
-        case .farenheit:
-            tempFormat = .celcius
-        case .celcius:
-            tempFormat = .farenheit
+        print("tap")
+        if farenheit == true {
+            farenheit = false
+            switchToCelcius()
+        } else {
+            farenheit = true
+            switchToFarenheit()
         }
     }
     
     private func switchToCelcius() {
         guard let forecast = self.forecast else {return}
-        hiLabel.text = String(forecast.maxTempC)
-        loLabel.text = String(forecast.minTempC)
+        hiLabel.text = String("\(forecast.maxTempC)°")
+        loLabel.text = String("\(forecast.minTempC)°")
         convertButton.setTitle("C", for: .normal)
     }
     
     private func switchToFarenheit() {
         guard let forecast = self.forecast else {return}
-        hiLabel.text = String(forecast.maxTempF)
-        loLabel.text = String(forecast.minTempF)
+        hiLabel.text = String("\(forecast.maxTempF)°")
+        loLabel.text = String("\(forecast.minTempF)°")
         convertButton.setTitle("F", for: .normal)
     }
     
