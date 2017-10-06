@@ -32,14 +32,13 @@ class ForecastCell: UITableViewCell {
     
     func set(forecast: Forecast) {
         self.forecast = forecast
-        self.hiLabel.text = String(forecast.maxTempF)
-        self.loLabel.text = String(forecast.minTempF)
+        self.hiLabel.text = String("\(forecast.maxTempF)°")
+        self.loLabel.text = String("\(forecast.minTempF)°")
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
         let dateString = dateFormatter.string(from: forecast.date)
-        self.dateLabel.text = "\(dateString)°"
-        
+        self.dateLabel.text = dateString
         self.iconView.image = UIImage(named: forecast.icon)
     }
     @IBAction func convertButtonTapped(_ sender: Any) {
