@@ -17,17 +17,6 @@ class ForecastCell: UITableViewCell {
     @IBOutlet weak var hiLabel: UILabel!
     @IBOutlet weak var loLabel: UILabel!
     @IBOutlet var iconView: UIImageView!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func setFarenheit(forecast: Forecast) {
         self.forecast = forecast

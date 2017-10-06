@@ -19,8 +19,6 @@ class MenuCell: UITableViewCell {
             delegate?.toCelcius()
         }
     }
-    
-
 }
 
 protocol MenuCellDelegate: class {
