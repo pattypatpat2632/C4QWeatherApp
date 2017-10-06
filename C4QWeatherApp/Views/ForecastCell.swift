@@ -32,20 +32,25 @@ class ForecastCell: UITableViewCell {
     
     func setFarenheit(forecast: Forecast) {
         self.forecast = forecast
-        self.hiLabel.text = String("\(forecast.maxTempF)°")
-        self.loLabel.text = String("\(forecast.minTempF)°")
+        displayDateFor(forecast)
+        self.iconView.image = UIImage(named: forecast.icon)
+        switchToFarenheit()
+    }
+    
+    func setCelcius(forecast: Forecast) {
+        self.forecast = forecast
+        displayDateFor(forecast)
+        self.iconView.image = UIImage(named: forecast.icon)
+        switchToCelcius()
+    }
+    
+    private func displayDateFor(_ forecast: Forecast) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
         let dateString = dateFormatter.string(from: forecast.date)
         self.dateLabel.text = dateString
-        self.iconView.image = UIImage(named: forecast.icon)
-        switchToFarenheit()
-    }
-    
-    func setCelcius(forcast: Forecast) {
-        setFarenheit(forecast: forcast)
-        switchToCelcius()
+        
     }
     @IBAction func convertButtonTapped(_ sender: Any) {
         print("tap")

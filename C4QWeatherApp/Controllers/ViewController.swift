@@ -56,7 +56,7 @@ extension ForecastController {
             if farenheit {
                 cell.setFarenheit(forecast: forecasts[indexPath.row])
             } else {
-                cell.setCelcius(forcast: forecasts[indexPath.row])
+                cell.setCelcius(forecast: forecasts[indexPath.row])
             }
             return cell
         }
