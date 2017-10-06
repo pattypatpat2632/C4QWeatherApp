@@ -17,7 +17,6 @@ class ForecastCell: UITableViewCell {
     @IBOutlet weak var hiLabel: UILabel!
     @IBOutlet weak var loLabel: UILabel!
     @IBOutlet var iconView: UIImageView!
-    @IBOutlet var convertButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,29 +51,17 @@ class ForecastCell: UITableViewCell {
         self.dateLabel.text = dateString
         
     }
-    @IBAction func convertButtonTapped(_ sender: Any) {
-        print("tap")
-        if farenheit == true {
-            farenheit = false
-            switchToCelcius()
-        } else {
-            farenheit = true
-            switchToFarenheit()
-        }
-    }
     
     private func switchToCelcius() {
         guard let forecast = self.forecast else {return}
         hiLabel.text = String("\(forecast.maxTempC)°")
         loLabel.text = String("\(forecast.minTempC)°")
-        convertButton.setTitle("Celcius", for: .normal)
     }
     
     private func switchToFarenheit() {
         guard let forecast = self.forecast else {return}
         hiLabel.text = String("\(forecast.maxTempF)°")
         loLabel.text = String("\(forecast.minTempF)°")
-        convertButton.setTitle("Farenheit", for: .normal)
     }
     
 }

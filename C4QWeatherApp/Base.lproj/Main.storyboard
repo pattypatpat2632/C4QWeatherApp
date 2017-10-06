@@ -27,53 +27,44 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of forecast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQ2-qR-3bE">
-                                            <rect key="frame" x="8" y="29" width="123" height="21"/>
+                                            <rect key="frame" x="8" y="29" width="123" height="91.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HiLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwG-lI-DT0">
-                                            <rect key="frame" x="8" y="58" width="58" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="151" y="60.5" width="79.5" height="29"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LowLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL4-1w-3rC">
-                                            <rect key="frame" x="8" y="87" width="73" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O5j-1t-wDZ">
-                                            <rect key="frame" x="140.5" y="28" width="94" height="94"/>
+                                            <rect key="frame" x="273" y="28" width="94" height="94"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="O5j-1t-wDZ" secondAttribute="height" multiplier="1:1" id="evT-8p-A1z"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3r-wl-nGP">
-                                            <rect key="frame" x="303" y="60" width="64" height="30"/>
-                                            <state key="normal" title="Farenheit"/>
-                                            <connections>
-                                                <action selector="convertButtonTapped:" destination="xqu-Lb-0HI" eventType="touchUpInside" id="v1f-Tc-tIS"/>
-                                            </connections>
-                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LowLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL4-1w-3rC">
+                                            <rect key="frame" x="237.5" y="60.5" width="100.5" height="29"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="PL4-1w-3rC" firstAttribute="leading" secondItem="7jn-AO-bUU" secondAttribute="leading" constant="8" id="3C4-9u-nWf"/>
-                                        <constraint firstItem="PL4-1w-3rC" firstAttribute="top" secondItem="NwG-lI-DT0" secondAttribute="bottom" constant="8" id="3YU-5a-7Aj"/>
-                                        <constraint firstAttribute="trailing" secondItem="h3r-wl-nGP" secondAttribute="trailing" constant="8" id="6fX-x1-Z0r"/>
                                         <constraint firstItem="O5j-1t-wDZ" firstAttribute="top" secondItem="tQ2-qR-3bE" secondAttribute="top" constant="-1" id="DBA-xh-Fik"/>
-                                        <constraint firstItem="NwG-lI-DT0" firstAttribute="leading" secondItem="7jn-AO-bUU" secondAttribute="leading" constant="8" id="Krc-VA-aUH"/>
-                                        <constraint firstItem="NwG-lI-DT0" firstAttribute="top" secondItem="tQ2-qR-3bE" secondAttribute="bottom" constant="8" id="Qjm-5r-XIy"/>
+                                        <constraint firstItem="PL4-1w-3rC" firstAttribute="centerY" secondItem="7jn-AO-bUU" secondAttribute="centerY" id="SiT-8I-Rv9"/>
+                                        <constraint firstAttribute="trailing" secondItem="O5j-1t-wDZ" secondAttribute="trailing" constant="8" id="Twf-4L-OYh"/>
                                         <constraint firstItem="O5j-1t-wDZ" firstAttribute="centerY" secondItem="7jn-AO-bUU" secondAttribute="centerY" id="UOx-Lj-wmZ"/>
+                                        <constraint firstItem="NwG-lI-DT0" firstAttribute="leading" secondItem="tQ2-qR-3bE" secondAttribute="trailing" constant="20" id="W1Q-wx-TXL"/>
+                                        <constraint firstItem="NwG-lI-DT0" firstAttribute="centerY" secondItem="7jn-AO-bUU" secondAttribute="centerY" id="gVO-R6-6Mf"/>
+                                        <constraint firstItem="PL4-1w-3rC" firstAttribute="leading" secondItem="NwG-lI-DT0" secondAttribute="trailing" constant="7" id="hpl-1s-sYm"/>
                                         <constraint firstItem="tQ2-qR-3bE" firstAttribute="leading" secondItem="7jn-AO-bUU" secondAttribute="leading" constant="8" id="kV3-li-PyI"/>
-                                        <constraint firstItem="h3r-wl-nGP" firstAttribute="centerY" secondItem="7jn-AO-bUU" secondAttribute="centerY" id="mPy-D8-uGJ"/>
                                         <constraint firstItem="O5j-1t-wDZ" firstAttribute="width" secondItem="7jn-AO-bUU" secondAttribute="width" multiplier="0.25" id="wga-OH-Pa3"/>
-                                        <constraint firstItem="O5j-1t-wDZ" firstAttribute="centerX" secondItem="7jn-AO-bUU" secondAttribute="centerX" id="zTC-sA-4Ys"/>
+                                        <constraint firstItem="tQ2-qR-3bE" firstAttribute="centerY" secondItem="7jn-AO-bUU" secondAttribute="centerY" id="wph-ny-HoA"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="convertButton" destination="h3r-wl-nGP" id="gDl-sV-elh"/>
                                     <outlet property="dateLabel" destination="tQ2-qR-3bE" id="v8K-ae-jf8"/>
                                     <outlet property="hiLabel" destination="NwG-lI-DT0" id="9SD-C4-30q"/>
                                     <outlet property="iconView" destination="O5j-1t-wDZ" id="3Mz-VK-hFM"/>
