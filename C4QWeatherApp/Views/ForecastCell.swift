@@ -56,14 +56,14 @@ class ForecastCell: UITableViewCell {
         guard let forecast = self.forecast else {return}
         hiLabel.text = String("\(forecast.maxTempC)°")
         loLabel.text = String("\(forecast.minTempC)°")
-        convertButton.setTitle("C", for: .normal)
+        convertButton.setTitle("Celcius", for: .normal)
     }
     
     private func switchToFarenheit() {
         guard let forecast = self.forecast else {return}
         hiLabel.text = String("\(forecast.maxTempF)°")
         loLabel.text = String("\(forecast.minTempF)°")
-        convertButton.setTitle("F", for: .normal)
+        convertButton.setTitle("Farenheit", for: .normal)
     }
     
 }
