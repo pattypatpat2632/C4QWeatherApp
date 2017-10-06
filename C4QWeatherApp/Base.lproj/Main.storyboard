@@ -80,6 +80,30 @@
                                     <outlet property="loLabel" destination="PL4-1w-3rC" id="hgy-2x-UZf"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="50" id="dda-2P-GwS" customClass="MenuCell" customModule="C4QWeatherApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="178" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dda-2P-GwS" id="NVj-St-xwl">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DsI-RQ-91s">
+                                            <rect key="frame" x="116" y="8" width="143" height="29"/>
+                                            <segments>
+                                                <segment title="Farenheit"/>
+                                                <segment title="Celcius"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="segmentControl:" destination="dda-2P-GwS" eventType="valueChanged" id="XRM-4J-ejK"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="DsI-RQ-91s" firstAttribute="top" secondItem="NVj-St-xwl" secondAttribute="top" constant="8" id="VSt-Ag-wE2"/>
+                                        <constraint firstItem="DsI-RQ-91s" firstAttribute="centerX" secondItem="NVj-St-xwl" secondAttribute="centerX" id="yOh-5G-ns1"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="CwX-vd-8Ve" id="cmU-lS-75z"/>

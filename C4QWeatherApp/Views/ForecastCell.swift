@@ -30,7 +30,7 @@ class ForecastCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func set(forecast: Forecast) {
+    func setFarenheit(forecast: Forecast) {
         self.forecast = forecast
         self.hiLabel.text = String("\(forecast.maxTempF)°")
         self.loLabel.text = String("\(forecast.minTempF)°")
@@ -40,6 +40,12 @@ class ForecastCell: UITableViewCell {
         let dateString = dateFormatter.string(from: forecast.date)
         self.dateLabel.text = dateString
         self.iconView.image = UIImage(named: forecast.icon)
+        switchToFarenheit()
+    }
+    
+    func setCelcius(forcast: Forecast) {
+        setFarenheit(forecast: forcast)
+        switchToCelcius()
     }
     @IBAction func convertButtonTapped(_ sender: Any) {
         print("tap")
